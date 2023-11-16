@@ -1,5 +1,7 @@
 # MERN E-Commerce
 ## BackEnd
+1. Add package.json
+    - `npm init`
 ## FrontEnd
 ### Herbal Nutrients
 
