@@ -44,3 +44,14 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+_________________________________________________________________
+
+# MERN E-Commerce
+## FrontEnd
+### Herbal Nutrients
+
+- React App with Redux Toolkit
+    - `npx create-react-app herbal-nutrients --template redux`
+- React Icons
+- React Router Dom
+- Boothstrap 5
