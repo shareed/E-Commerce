@@ -1,6 +1,6 @@
-const User = require('../models/userModel');
+const User = require('../models/userModel');//allow us to use the user schema
 
-
+//function to create user
 const createUser = async (req, res) => {
     //check to see if user already exist
     const email = req.body.email;

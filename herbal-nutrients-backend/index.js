@@ -17,6 +17,7 @@ app.use(bodyParser.urlencoded({extended:false}))
 
 app.use('/api/user', authRouter) //localhost:5000/api/user/register
 
+//Listen for connections
 app.listen(PORT, () => {
     console.log(`Server is Running at PORT localhost:${PORT}`);
 })
