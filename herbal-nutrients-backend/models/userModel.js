@@ -28,11 +28,16 @@ var userSchema = new mongoose.Schema({
 });
 
 //To hash a password:
-//generate a salt and hash on separate function calls
+//generate a salt and hash password on separate function calls
 userSchema.pre('save', async function (next) {
     const salt = await bcrypt.genSaltSync(10);
     this.password = await bcrypt.hash(this.password, salt);
-})
+});
+
+//to check and see if passwords match when a user login
+userSchema.methods.isPasswordMatched = async function (enteredPassword) {
+    return await bcrypt.compare(enteredPassword, this.password); //if password is correct will return true otherwise will return false
+}
 
 //Export the model
 module.exports = mongoose.model('User', userSchema);
