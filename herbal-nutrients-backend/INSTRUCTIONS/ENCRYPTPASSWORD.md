@@ -1,5 +1,5 @@
 # Encrypt Passowrd
-
+**When a user creates an account we do not need to save the password as plain text instead we need to encrypt the password using bcrypt and then save it**
 1. **Encrypt Password:** When a user creates an account we should not save the password in plain text
 - In the `userModel.js` file use bcrypt to hash password
     - add below user schema
@@ -14,7 +14,7 @@
     ```
 
 2. **Compare encrypted password and the password used to login:** When the user logs in you have to be able to compare the saved hashed password with the entered password
-- In the `userModel.js` create a function to compare the hashed password with the entered password
+- In the `userModel.js` create a method to compare the hashed password with the entered password
     - add below the hash function
     ```
         //to check and see if passwords match when a user login
