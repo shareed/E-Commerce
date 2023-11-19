@@ -36,7 +36,8 @@ userSchema.pre('save', async function (next) {
 
 //to check and see if passwords match when a user login
 userSchema.methods.isPasswordMatched = async function (enteredPassword) {
-    return await bcrypt.compare(enteredPassword, this.password); //if password is correct will return true otherwise will return false
+    //if password is correct will return true otherwise will return false
+    return await bcrypt.compare(enteredPassword, this.password); 
 }
 
 //Export the model
