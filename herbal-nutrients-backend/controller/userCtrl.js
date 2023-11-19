@@ -1,7 +1,7 @@
 const User = require('../models/userModel');//allow us to use the user schema
 const asyncHandler = require('express-async-handler');
 
-
+// req.body wiil get you all the details entered by the user
 //function to create user
 const createUser = asyncHandler(
     async (req, res) => {
@@ -22,10 +22,21 @@ const createUser = asyncHandler(
 );
 
 
-const loginUserCtrl = asyncHandler(async(req, res) => {
+const loginUserCtrl = asyncHandler(async (req, res) => {
     const { email, password } = req.body;
-    console.log(email, password);
-})
+    // console.log(email, password);
+
+    //check if user exists
+    const findUser = await User.findOne({ email });
+
+    //if user found, then check if the entered password
+    //uses the isPasswordMatched method created on the userSchema
+    if (findUser && await findUser.isPasswordMatched(password)) {
+        res.json(findUser)
+    } else {
+        throw new Error('Invalid Credentials');
+    }
+});
 
 
-module.exports={createUser}
+module.exports={createUser, loginUserCtrl}

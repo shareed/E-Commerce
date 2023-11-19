@@ -16,7 +16,8 @@ app.use(bodyParser.urlencoded({extended:false}))
 //     res.send("Hello from server")
 // })
 
-app.use('/api/user', authRouter) //localhost:5000/api/user/register
+//localhost:5000/api/user/{any route in the authRouter}
+app.use('/api/user', authRouter)
 
 
 

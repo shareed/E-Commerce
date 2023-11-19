@@ -35,6 +35,9 @@ userSchema.pre('save', async function (next) {
 });
 
 //to check and see if passwords match when a user login
+//this is how you create methods and attached them t the userSchema
+//these methods can then be accessed in other files that use the userSchema
+//userSchema.methods.isPasswordMatched, creates a method called isPasswordMatched
 userSchema.methods.isPasswordMatched = async function (enteredPassword) {
     //if password is correct will return true otherwise will return false
     return await bcrypt.compare(enteredPassword, this.password); 
