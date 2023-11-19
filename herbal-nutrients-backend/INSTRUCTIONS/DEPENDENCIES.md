@@ -1,10 +1,15 @@
 # Dependencies
-- `express` helps manage servers and routes
-- `mongoose` Node. js-based Object Data Modeling (ODM) library for MongoDB
-- `bcrypt` use to hash and store passwords
-- `body-parser` to process data sent in an HTTP request body
+- [`express`]() helps manage servers and routes
+- [`mongoose`]() Node. js-based Object Data Modeling (ODM) library for MongoDB
+- [`bcrypt`]() use to hash and store passwords
+- [`body-parser`]() to process data sent in an HTTP request body
     - provides four express middleware for parsing JSON, Text, URL-encoded, and raw data sets over an HTTP request body
-- `dotenv` keep passwords, API keys, and other sensitive data out of your code
+- [`dotenv`]() keep passwords, API keys, and other sensitive data out of your code
     - allow you to create environment variables in a .env file instead of putting them into your code
-- `npm install express-async-handler`
-- `npm install jsonwebtoken`
+    - environment variables can be accessed by using `process.env.nameOfVarable`
+- [`npm install express-async-handler`]()
+- [`npm install jsonwebtoken`](https://jwt.io/introduction) defines a compact and self-contained way for securely transmitting information between parties as a JSON object
+    - information can be verified and trusted because it is digitally signed
+    - can be signed using a secret(HMAC algorithm)
+    - can be signed using a public/private key pair using RSA or ECDSA
+    - can be encrypted to also provide secrecy between parties
