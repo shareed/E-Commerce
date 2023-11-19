@@ -1,6 +1,6 @@
 const User = require('../models/userModel');//allow us to use the user schema
 const asyncHandler = require('express-async-handler');
-
+const {generateToken} = require('../config/jwtToken');
 // req.body wiil get you all the details entered by the user
 //function to create user
 const createUser = asyncHandler(
@@ -32,7 +32,15 @@ const loginUserCtrl = asyncHandler(async (req, res) => {
     //if user found, then check if the entered password
     //uses the isPasswordMatched method created on the userSchema
     if (findUser && await findUser.isPasswordMatched(password)) {
-        res.json(findUser)
+        // res.json(findUser)//before adding token
+        res.json({
+            _id: findUser?._id,
+            firstName: findUser?.firstName,
+            lastName: findUser?.lastName,
+            email: findUser?.email,
+            mobile: findUser?.mobile,
+            token: generateToken(findUser?._id),
+        });
     } else {
         throw new Error('Invalid Credentials');
     }

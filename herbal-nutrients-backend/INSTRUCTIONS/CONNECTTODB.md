@@ -25,3 +25,7 @@
 3. Run Server `npm run server`
     - you should see **Database Connected Successfully** in the console
 
+
+## Review
+- Creating roles
+- `find` methods
