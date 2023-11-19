@@ -1,8 +1,12 @@
 const User = require('../models/userModel');//allow us to use the user schema
 const asyncHandler = require('express-async-handler');
 const {generateToken} = require('../config/jwtToken');
+
+
+
 // req.body wiil get you all the details entered by the user
-//function to create user
+
+//Create user/Register
 const createUser = asyncHandler(
     async (req, res) => {
         //check to see if user already exist
@@ -22,6 +26,7 @@ const createUser = asyncHandler(
 );
 
 
+//Login User
 const loginUserCtrl = asyncHandler(async (req, res) => {
     const { email, password } = req.body;
     // console.log(email, password);
@@ -47,4 +52,16 @@ const loginUserCtrl = asyncHandler(async (req, res) => {
 });
 
 
-module.exports={createUser, loginUserCtrl}
+//Get All Users
+const getAllUsers = asyncHandler(async (req, res) => {
+    try {
+        const getUsers = await User.find();
+        res.json(getUsers);
+    }
+    catch (error) {
+        throw new Error(error) 
+    }
+})
+
+
+module.exports={createUser, loginUserCtrl, getAllUsers}

@@ -8,6 +8,7 @@
     - allow you to create environment variables in a .env file instead of putting them into your code
     - environment variables can be accessed by using `process.env.nameOfVarable`
 - [`npm install express-async-handler`]()
+    - middleware for handling exceptions inside of async express routes and passing them to your express error handlers
 - [`npm install jsonwebtoken`](https://jwt.io/introduction) defines a compact and self-contained way for securely transmitting information between parties as a JSON object
     - information can be verified and trusted because it is digitally signed
     - can be signed using a secret(HMAC algorithm)

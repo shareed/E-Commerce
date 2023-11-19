@@ -17,3 +17,7 @@
     - Log User In
         - verify password matches encrypted password
         - add token to login session
+
+## Concepts Tpo Review
+- [JS async and await](https://zellwk.com/blog/async-await/)
+- [Using async/await in Express](https://zellwk.com/blog/async-await-express/)
