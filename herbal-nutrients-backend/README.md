@@ -21,3 +21,5 @@
 ## Concepts Tpo Review
 - [JS async and await](https://zellwk.com/blog/async-await/)
 - [Using async/await in Express](https://zellwk.com/blog/async-await-express/)
+
+start at 1:04:45(Deleting a user)

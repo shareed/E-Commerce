@@ -1,10 +1,11 @@
-const User = require('../models/userModel');//allow us to use the user schema
+const User = require('../../models/userModel');//allow us to use the user schema
 const asyncHandler = require('express-async-handler');
-const {generateToken} = require('../config/jwtToken');
+const {generateToken} = require('../../config/jwtToken');
 
 
 
 // req.body wiil get you all the details entered by the user
+//these functions will act a middleware and will be passed to appropiate routes in authRoute.js
 
 //Create user/Register
 const createUser = asyncHandler(
@@ -40,7 +41,7 @@ const loginUserCtrl = asyncHandler(async (req, res) => {
         // res.json(findUser)//before adding token
         res.json({
             _id: findUser?._id,
-            firstName: findUser?.firstName,
+            firstName: findUser?.firstName, //? is optional chaining and it checks to see if it exist
             lastName: findUser?.lastName,
             email: findUser?.email,
             mobile: findUser?.mobile,
@@ -63,6 +64,29 @@ const getAllUsers = asyncHandler(async (req, res) => {
     }
 })
 
+//Update User
+const updateUser = asyncHandler(async (req, res) => {
+    const { id } = req.params;
+
+    try {
+        const updatedUser = await User.findByIdAndUpdate(
+            id,
+            {
+            firstName: req?.body?.firstName,
+            lastName: req?.body?.lastName,
+            email: req?.body?.email,
+            mobile: req?.body?.mobile
+            },
+            {
+                new: true,
+            }
+        );
+        res.json(updatedUser)
+    } catch (error) {
+        throw new Error(error)
+    }
+})
+
 //Get A single User
 const getAUser = asyncHandler(async (req, res) => {
     const { id } = req.params;
@@ -76,5 +100,32 @@ const getAUser = asyncHandler(async (req, res) => {
     catch (error) {
         throw new Error(error);
     }
-})
-module.exports={createUser, loginUserCtrl, getAllUsers, getAUser}
+});
+
+//Delete single User
+const deleteUser = asyncHandler(async (req, res) => {
+    const { id } = req.params; //gets the id from params
+    // console.log(id);
+    try {
+        const deleteUser = await User.findByIdAndDelete(id);
+        res.json({
+            deleteUser
+        })
+    }
+    catch (error) {
+        throw new Error(error);
+    }
+});
+
+
+
+
+module.exports =
+{
+    createUser,
+    loginUserCtrl,
+    getAllUsers,
+    getAUser,
+    deleteUser,
+    updateUser
+}

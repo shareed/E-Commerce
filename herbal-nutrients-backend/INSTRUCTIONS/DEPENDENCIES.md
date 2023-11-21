@@ -14,3 +14,11 @@
     - can be signed using a secret(HMAC algorithm)
     - can be signed using a public/private key pair using RSA or ECDSA
     - can be encrypted to also provide secrecy between parties
+
+# Dev Dependencies
+- [`nodemon`]() 
+    - `npm install nodemon --save-dev`, installs as dev dependency
+        - monitors your project directory and automatically restarts your node application when it detects any changes, so you do not have to stop and restart your applications in order for your changes to take effect
+    - **Scripts:** are used fgor the server to be able to start
+        - `"start": "node index.js",`
+        - `"server": "nodemon index.js"`

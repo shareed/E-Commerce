@@ -41,14 +41,10 @@
         })
     ```
 5. Create `.env` file in root to add PORT
-    - `routes ---> .env`
+    - `.env`
     - add Port `PORT=5000` to `.env` file
 6. Install nodemon and Add scripts to package.json file
-    - `npm install nodemon --save-dev`, installs as dev dependency
-        - monitors your project directory and automatically restarts your node application when it detects any changes, so you do not have to stop and restart your applications in order for your changes to take effect
-    - **Scripts:** are used fgor the server to be able to start
-        - `"start": "node index.js",`
-        - `"server": "nodemon index.js"`
+   
 7. Start Server
     - Run `npm run server` from the root folder
     - go to `localhost:5000` in broswer to see
