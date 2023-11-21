@@ -1,23 +1,25 @@
-# MERN E-Commerce BackEnd
+# MERN E-Commerce: Herbal Nutrients Backend Server
+
+
+## Connects to MongoDB Database
+- MongoDB is used to create user schema
+## DotEnv
+## User CRUD Operations
+- uses `express.Router()` that accpet middleware functions that control how the routes are handled
+- Get All Users
+- Register A New User
+- Log User In
+- Get a User
+- Update User
+- Delete User
+## Error handling Middleware
+## Password Encryption
+- bcrypt
+## Token Gneration
+- JWT
 
 - [List of Dependencies](./INSTRUCTIONS/DEPENDENCIES.md)
-
-## STEP BY STEP INSTRUCTIONS
-1. [Create Server](./INSTRUCTIONS/CREATESERVER.md)
-2. [Connect To Database](./INSTRUCTIONS/CONNECTTODB.md)
-3. [Create Functionality to Create New User](./INSTRUCTIONS/NewUserFunctionality.md)
-4. [Create Error Handling Middleware](./INSTRUCTIONS/ERRORHANDLINGMIDDLEWARE.md)
-5. [Encrypt Password](./INSTRUCTIONS/ENCRYPTPASSWORD.md)
-6. [Generate Token](./INSTRUCTIONS/GENERATETOKEN.md)
-
-## Server Funtionality
-1. User
-    - Register A New User
-        - Encrypt password
-    - Log User In
-        - verify password matches encrypted password
-        - add token to login session
-
+_______________________________________________________________
 ## Concepts Tpo Review
 - [JS async and await](https://zellwk.com/blog/async-await/)
 - [Using async/await in Express](https://zellwk.com/blog/async-await-express/)

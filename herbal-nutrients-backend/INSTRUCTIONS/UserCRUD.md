@@ -74,3 +74,19 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:false}))
 
 ```
+
+## User CRUD
+    - Get All Users
+    - Register A New User
+        - use email to check to see if user exist
+        - if user does not exist create a new user
+            - Encrypts password by way of hash attached to the userSchema
+    - Log User In
+        - verify password matches encrypted passwordby way of method attached to userSchema
+        - add token to login session using jwt
+    - Get a User
+        - user id is passed in through `req.params` to get user
+    - Update User
+        - user id is passed in through `req.params` to update user
+    - Delete User
+        - user id is passed in through `req.params` and delets the user
