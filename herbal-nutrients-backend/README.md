@@ -4,6 +4,9 @@
 ## Connects to MongoDB Database
 - MongoDB is used to create user schema
 ## DotEnv
+## Middleware
+- authMiddleware.js
+    - verifies the jwt web token
 ## User CRUD Operations
 - uses `express.Router()` that accpet middleware functions that control how the routes are handled
 - Get All Users

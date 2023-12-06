@@ -29,7 +29,23 @@ var userSchema = new mongoose.Schema({
         type: String,
         default:"user"
     },
-});
+    cart: {
+        type: Array,
+        default:[]
+    },
+    address: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Address"
+    }],
+    wishList: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Product"
+    }]
+},
+    {
+        timestamps: true
+    }
+);
 
 //To hash a password:
 //generate a salt and hash password on separate function calls
